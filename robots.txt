@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /mobile-stream.html
 
-Sitemap: https://cheongna-theliv.vercel.app/sitemap.xml
+Sitemap: https://wanjunsim3-droid.github.io/cheongna-theliv/sitemap.xml
