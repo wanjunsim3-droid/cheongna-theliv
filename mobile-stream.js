@@ -346,14 +346,18 @@
             if (data.get('_honey')) return;
             const payload = Object.fromEntries(data);
             delete payload._honey;
-            payload._subject = '청라 더리브 관심고객 상담 신청';
+            payload._subject = '[청라 더리브] 관심고객 등록';
             payload._template = 'table';
+            payload._captcha = 'false';
+            payload['현장'] = '청라 더리브 티아모 까사';
+            payload['접수페이지'] = 'mobile:' + (location.pathname.split('/').pop() || 'index.html');
+            payload['접수시각'] = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
             const status = section.querySelector('#form-status');
             const button = form.querySelector('.send');
             button.disabled = true;
             status.textContent = '신청 내용을 전송하고 있습니다.';
             try {
-              const r = await fetch('https://formsubmit.co/ajax/edusim71@gmail.com', {
+              const r = await fetch('https://formsubmit.co/ajax/3878e8dba7de3ed14f707d506bb03f43', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
                 body: JSON.stringify(payload)
